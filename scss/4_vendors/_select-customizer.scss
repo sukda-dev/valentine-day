@@ -1,0 +1,163 @@
+@use "../0_utilities/_index" as *;
+
+$selectW: rem(450);
+$selectW-m: rem(550);
+
+$selectH: rem(80);
+$selectH-m: rem(120);
+
+.select {
+  position: relative;
+  border: none;
+  width: $selectW;
+  height: $selectH;
+  margin: 0 auto;
+  background-color: transparent;
+  color: $black;
+  outline: none;
+  border-bottom: rem(2) solid $black;
+  z-index: 1;
+  @include for-mobile {
+    width: $selectW-m;
+    height: $selectH-m;
+  }
+}
+
+.styledSelect {
+  cursor: pointer;
+  position: absolute;
+  width: $selectW;
+  height: $selectH;
+  border: none;
+  text-align: center;
+  overflow-y: hidden;
+  outline: none;
+  font-family: $text-font;
+  font-size: rem(24);
+  // letter-spacing: 0.05em;
+  // font-style: italic;
+  // text-transform: uppercase;
+
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  @include for-mobile {
+    width: $selectW-m;
+    height: $selectH-m;
+    font-size: rem(36);
+  }
+
+  &:after {
+    content: "";
+    width: rem(30);
+    height: rem(30);
+    background-image: url("../images/general/arrow.png");
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    left: rem(32);
+    top: 35%;
+    transform: translateX(-50%);
+    @include for-mobile {
+      width: rem(60);
+      height: rem(60);
+      left: auto;
+      right: rem(-10);
+      // top: 50%;
+      background-image: url("../images/general/arrow-m.png");
+      background-size: cover;
+      background-position: center;
+    }
+  }
+}
+
+.styledSelect select,
+.select select {
+  visibility: hidden;
+}
+
+.styledSelect > div {
+  width: $selectW;
+  height: $selectH;
+  text-align: center;
+  vertical-align: middle;
+  // letter-spacing: 1px;
+  outline: none;
+  border: none;
+  @include for-mobile {
+    width: $selectW-m;
+    height: $selectH-m;
+  }
+}
+
+.options {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: 0 0;
+  padding: 0 0;
+  list-style: none;
+  border: 0;
+  background-color: $black;
+  color: $black;
+  width: 100%;
+  font-size: rem(24);
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: rem(340);
+  z-index: 1;
+
+  @include for-mobile {
+    max-height: rem(662);
+    font-size: rem(36);
+  }
+}
+
+.options > li,
+.options-country > li {
+  cursor: pointer;
+  display: table;
+  width: $selectW;
+  height: $selectH;
+  font-family: $text-font;
+  font-size: rem(24);
+  // letter-spacing: 0.05em;
+  background-color: transparent !important;
+  color: $black !important;
+  // text-transform: uppercase;
+
+  @include for-mobile {
+    width: $selectW-m;
+    height: $selectH-m;
+    font-size: rem(36);
+  }
+
+  &:hover {
+    background-color: $black !important;
+    color: $white !important;
+  }
+
+  &:first-child {
+    display: none;
+  }
+
+  &:last-child {
+    border: 0;
+  }
+}
+
+@-moz-document url-prefix() {
+  .options > li,
+  .options-country > li {
+    padding: rem(1);
+  }
+}
+
+select {
+  outline: none;
+  border: none;
+}

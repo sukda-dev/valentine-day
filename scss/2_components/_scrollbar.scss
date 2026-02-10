@@ -1,0 +1,49 @@
+@use "../0_utilities/__index" as *;
+
+/*  ==================================================
+    scrollbar
+================================================== */
+
+$scrollbarWidthD: 4px;
+$scrollColor: $main-color;
+$scrollBackgroundColor: rgba(
+  $color: $main-color,
+  $alpha: 0.5,
+);
+
+/* main scrollbar */
+::-webkit-scrollbar {
+  width: $scrollbarWidthD;
+}
+
+/* scroll */
+::-webkit-scrollbar-thumb {
+  background: $scrollColor;
+}
+
+/* track */
+::-webkit-scrollbar-track {
+  background: $scrollBackgroundColor;
+}
+
+/* hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $main-color;
+}
+
+.scroll-inner,
+.scroll-popup {
+  @include fill-area;
+
+  // overflow: visible;
+  // position: relative;
+  // z-index: 2;
+
+  // @include for-mobile {
+  //   overflow-y: overlay;
+  //   overflow-x: hidden;
+  // }
+
+  overflow-y: overlay;
+  overflow-x: hidden;
+}

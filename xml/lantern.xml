@@ -1,0 +1,77 @@
+<svg viewBox="0 0 1440 900"
+     xmlns="http://www.w3.org/2000/svg"
+     preserveAspectRatio="xMidYMid slice">
+
+  <defs>
+    <!-- ================= LIGHT ================= -->
+    <radialGradient id="glow" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#fffbe6"/>
+      <stop offset="40%" stop-color="#ffe08a"/>
+      <stop offset="75%" stop-color="#ffb703"/>
+      <stop offset="100%" stop-color="rgba(255,183,3,0)"/>
+    </radialGradient>
+
+    <linearGradient id="paper" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fff7d6"/>
+      <stop offset="50%" stop-color="#ffe08a"/>
+      <stop offset="100%" stop-color="#f2a654"/>
+    </linearGradient>
+
+    <filter id="blurGlow">
+      <feGaussianBlur stdDeviation="22"/>
+    </filter>
+
+    <!-- ================= LANTERN ================= -->
+    <symbol id="lantern" viewBox="0 0 200 300">
+      <!-- glow -->
+      <ellipse cx="100" cy="150" rx="120" ry="160"
+        fill="url(#glow)" filter="url(#blurGlow)"/>
+
+      <!-- body -->
+      <path d="
+        M30 40
+        A70 25 0 0 1 170 40
+        L170 260
+        A70 25 0 0 1 30 260
+        Z"
+        fill="url(#paper)"/>
+
+      <ellipse cx="100" cy="40" rx="70" ry="22"
+        fill="#d08b36"/>
+      <ellipse cx="100" cy="260" rx="70" ry="22"
+        fill="#b87423"/>
+    </symbol>
+
+    <!-- ================= DUST ================= -->
+    <symbol id="dust">
+      <circle r="1.2" fill="#fff6cf" opacity="0.7"/>
+    </symbol>
+  </defs>
+
+  <!-- FAR -->
+  <g opacity="0.35">
+    <use href="#lantern" x="300" y="500" transform="scale(0.35)"/>
+    <use href="#lantern" x="900" y="480" transform="scale(0.32)"/>
+  </g>
+
+  <!-- MID -->
+  <g opacity="0.65">
+    <use href="#lantern" x="500" y="520" transform="scale(0.55)"/>
+    <use href="#lantern" x="1100" y="540" transform="scale(0.5)"/>
+  </g>
+
+  <!-- NEAR -->
+  <g>
+    <use href="#lantern" x="200" y="580" transform="scale(0.85)"/>
+  </g>
+
+  <!-- CINEMATIC DUST -->
+  <g opacity="0.6">
+    <use href="#dust" x="400" y="300"/>
+    <use href="#dust" x="600" y="200"/>
+    <use href="#dust" x="800" y="260"/>
+    <use href="#dust" x="1000" y="180"/>
+    <use href="#dust" x="1200" y="240"/>
+  </g>
+
+</svg>

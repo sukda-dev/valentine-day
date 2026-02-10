@@ -1,0 +1,39 @@
+@use "../0_utilities/__index" as *;
+
+$footerHeight: rem(130);
+
+#footer {
+  width: 100%;
+  position: relative;
+  @include flex-center;
+  display: none;
+  height: #{$footerHeight};
+  justify-content: space-between;
+  overflow: hidden;
+  @media screen and (min-width: 768px), (orientation: landscape) {
+    display: none !important;
+  }
+
+  .arrow {
+    &--next,
+    &--prev {
+      height: 100%;
+      cursor: pointer;
+      position: relative;
+      width: rem(73);
+      @include flex-center;
+      left: auto;
+      right: auto;
+      padding: 0 rem(40);
+      box-sizing: content-box;
+
+      &.locked {
+        opacity: 0;
+      }
+    }
+
+    &__inner {
+      @include flex-center;
+    }
+  }
+}

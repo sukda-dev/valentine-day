@@ -1,0 +1,50 @@
+{
+  "type": "module",
+  "name": "nivac-start-template",
+  "version": "1.1.0",
+  "private": true,
+  "main": "index.html",
+  "author": "Bank Outsourcify <bank@outsourcify.net>",
+  "license": "MIT",
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "scripts": {
+    "dev": "gulp dev",
+    "watch": "gulp serve",
+    "build": "gulp build",
+    "optimize": "gulp optimize",
+    "make": "gulp make",
+    "clean": "gulp clean"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.24.0",
+    "@babel/preset-env": "^7.24.0",
+    "browser-sync": "^3.0.4",
+    "deep-list-dir": "^1.4.4",
+    "del": "^7.1.0",
+    "dotenv": "^16.4.5",
+    "gulp": "4.0.2",
+    "gulp-cli": "^3.1.0",
+    "gulp-autoprefixer": "^10.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-dependents": "^1.2.5",
+    "gulp-footer": "^2.1.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-imagemin": "^9.1.0",
+    "gulp-jsonminify": "^1.1.0",
+    "gulp-prettier": "^6.0.0",
+    "gulp-sass": "^6.0.1",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-terser": "^2.1.0",
+    "sass": "^1.72.0"
+  },
+  "dependencies": {
+    "gsap": "^3.12.5",
+    "shelljs": "^0.10.0"
+  }
+}

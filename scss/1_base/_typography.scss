@@ -1,0 +1,14 @@
+@use "../0_utilities/__index" as *;
+
+@font-face {
+  font-family: "Futura PT";
+  src: url("fonts/FuturaPT-Book.eot");
+  src:
+    url("fonts/FuturaPT-Book.eot?#iefix") format("embedded-opentype"),
+    url("fonts/FuturaPT-Book.woff2") format("woff2"),
+    url("fonts/FuturaPT-Book.woff") format("woff"),
+    url("fonts/FuturaPT-Book.ttf") format("truetype"),
+    url("fonts/FuturaPT-Book.svg#FuturaPT-Book") format("svg");
+  font-weight: $book;
+  font-style: normal;
+}

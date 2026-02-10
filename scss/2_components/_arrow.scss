@@ -1,0 +1,76 @@
+@use "../0_utilities/__index" as *;
+
+.arrow-d {
+  display: block;
+
+  @include for-mobile {
+    display: none;
+  }
+
+  .arrow {
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: rem(40);
+    height: rem(70);
+    z-index: $arrow-index;
+    padding: 13% rem(72);
+    box-sizing: content-box;
+    transition: opacity 0.2s;
+
+    &__inner {
+      @include fill-area;
+    }
+
+    &--prev {
+      left: 0;
+      padding-left: rem(30);
+    }
+
+    &--next {
+      right: 0;
+      padding-right: rem(30);
+    }
+
+    &.locked {
+      opacity: 0.5;
+      cursor: default;
+    }
+  }
+}
+
+.arrow-down,
+.arrow-down-popup {
+  @include flex-center;
+  flex-direction: column;
+  cursor: poiner;
+
+  z-index: 10;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.6;
+  .icon {
+    width: rem(120);
+    height: rem(120);
+    @include for-mobile {
+      width: rem(100);
+      height: rem(100);
+    }
+  }
+
+  .text-scroll {
+    color: $white;
+    font-size: 16px;
+  }
+  img {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

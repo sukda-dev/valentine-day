@@ -1,0 +1,31 @@
+$text-font: "Futura PT";
+
+$white: #ffffff;
+$black: #000000;
+$grey: #dfdfdf;
+
+$main-color: $black;
+$text-color: $black;
+$ins-color: $black;
+
+// TODO: check color of project
+
+// Font weight
+$light: 300;
+$book: 400;
+$medium: 500;
+$demi: 600;
+$bold: 700;
+$heavy: 900;
+
+// Z-INDEX
+$arrow-index: 3;
+$nav-index: 4;
+$menu-index: 5;
+$popup-index: 6;
+
+// brake point
+$mobile: 768px;
+$mobile-land: 568px;
+$laptop: 1024px;
+$desktop-big: 1920px;

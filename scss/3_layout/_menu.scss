@@ -1,0 +1,64 @@
+@use "../0_utilities/__index" as *;
+
+$menuHeader: rem(180);
+$menuHeader-m: rem(360);
+.menu-overlay {
+  @include absolute-fill-area;
+  z-index: $menu-index;
+  display: none;
+
+  .menu {
+    position: relative;
+    height: 100%;
+    width: 100%;
+
+    .menu_list {
+      height: calc(100% - #{$menuHeader});
+      overflow: auto;
+
+      @include for-mobile {
+        height: calc(100% - #{$menuHeader-m});
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: $black;
+        border-radius: 0;
+      }
+
+      ul {
+        margin: 0;
+        padding: 0;
+
+        li {
+          position: relative;
+          text-align: center;
+          list-style: none;
+          cursor: pointer;
+          text-transform: uppercase;
+          @include flex-center;
+          flex-direction: column;
+
+          &.locked {
+            pointer-events: none;
+            opacity: 0.5;
+            cursor: default;
+          }
+
+          &.active {
+            font-weight: $bold;
+          }
+        }
+      }
+    }
+
+    .close {
+      position: absolute;
+      top: rem(41.5);
+      left: rem(45);
+      cursor: pointer;
+      z-index: 2;
+      width: rem(45);
+      height: rem(45);
+    }
+  }
+}

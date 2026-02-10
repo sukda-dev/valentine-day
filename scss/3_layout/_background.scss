@@ -1,0 +1,7 @@
+@use "../0_utilities/__index" as *;
+
+#main-container {
+  background-size: cover;
+  background-position: top;
+  transition: background 0.3s;
+}

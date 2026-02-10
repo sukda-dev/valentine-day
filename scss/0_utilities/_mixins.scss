@@ -1,0 +1,163 @@
+/*  ==================================================
+    screen calculations
+================================================== */
+
+// DEBUG: dart-sass@1.65.0
+// Can't duplicated function name: round, mod, rem, sin, cos, tan, asin, acos, atan, atan2, pow, sqrt, hypot, log, exp, abs, and sign
+// dart-sass@1.65.0 > more: https://github.com/sass/dart-sass/releases/tag/1.65.0
+// issue: https://github.com/sass/dart-sass/issues/2059
+
+/*
+  css docs: https://developer.mozilla.org/en-US/docs/Web/CSS/rem
+  NOTE: rem() is duplicate name on css function.
+  before create function check duplicate name on css function (above link).
+  ptr: pixel to rem
+
+  second ways: downgrading dart-sass to 1.64.2 or less than ("sass": "1.64.2")
+ */
+@function rem($rem) {
+  @return calc($rem / 16) + rem;
+}
+
+/*  ==================================================
+    mixin flex
+
+    @include flex;
+    @include flex-column;
+    @include flex-center;
+================================================== */
+
+@mixin flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@mixin flex-column {
+  @include flex;
+  flex-direction: column;
+}
+
+@mixin flex-center {
+  @include flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*  ==================================================
+    mixin background
+
+    @include bg-cov;                    cover background image
+    @include bg-con;                    contianed background image
+================================================== */
+@mixin bg-cov($url) {
+  background-image: url($url);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@mixin bg-con($url) {
+  background-image: url($url);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/*  ==================================================
+    mixin area & element width
+
+    @include area;                      view element area
+    @include fill-area;                 fill element width and height
+    @include absolute-center;           make element center of parent element
+    @include maxWidth();                width will resizable when screen is stretched
+    @include maxHeight();               height will resizable when screen is stretched
+    @include clearfix;                  make parent element clearfix inside float element
+================================================== */
+
+@mixin fill-area {
+  width: 100%;
+  height: 100%;
+}
+
+@mixin area {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+@mixin absolute-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin absolute-fill-area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  @include fill-area;
+}
+
+@mixin maxWidth($width) {
+  width: 100%;
+  max-width: ($width);
+}
+
+@mixin maxHeight($width) {
+  height: 100%;
+  max-height: ($width);
+}
+
+@mixin clearfix() {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+/*  ==================================================
+    util mixins
+
+    @include user-select-none;          prevent guester user drag text and image
+    @include remove-br;                 make <br> element invisible
+    @include placeholder;               adjust placeholder
+================================================== */
+
+@mixin user-select-none {
+  // docs: https://developer.mozilla.org/en-US/docs/Web/CSS/user-select
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+@mixin remove-br {
+  // [:NOTE] Change line break from <br> to <break>
+  break {
+    display: inline;
+    padding-left: rem(8);
+  }
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+
+  &:-moz-placeholder {
+    @content;
+  }
+
+  &::-moz-placeholder {
+    @content;
+  }
+
+  &:-ms-input-placeholder {
+    @content;
+  }
+}
+

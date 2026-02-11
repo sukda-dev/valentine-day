@@ -212,7 +212,7 @@ function scrollLantern() {
       duration: isMobile ? 15 : 5,
     },
     layer1_flower4: {
-      x: isMobile ? -730 : -600,
+      x: isMobile ? -981 : -600,
       y: isMobile ? -1200 : -1200,
       scale: 6,
       duration: isMobile ? 15 : 5,

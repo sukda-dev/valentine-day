@@ -7,6 +7,9 @@ body {
 
 #tangled {
   overflow: hidden;
+  ::-webkit-scrollbar {
+    display: none;
+  }
   .bg {
     @include absolute-center;
     width: 110vw;
@@ -29,7 +32,9 @@ body {
   .hero {
     width: 100vw;
     height: 100vh;
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
     overflow: visible;
   }
 
@@ -103,10 +108,6 @@ body {
     opacity: 0.6;
   }
 
-  // ================= BOAT =================
-  .boat {
-  }
-
   .lantern-sky {
     @include for-mobile {
       transform: translate(0%, -30%) !important;
@@ -143,9 +144,9 @@ body {
     font-size: 16px;
     transform: translate(-50%, 40px) scale(0.8);
     opacity: 0;
-    width: 200px;
+    width: rem(720);
     background: rgba(255, 255, 255, 0.8);
-    padding: 40px;
+    padding: rem(40);
     border-radius: 20px;
     text-align: center;
     will-change: transform, opacity;
@@ -161,5 +162,386 @@ body {
 
   .lantern-layer.near {
     filter: blur(0px);
+  }
+
+  #scroll-box {
+    height: rem(20000);
+    @include for-desktop {
+      height: rem(30000);
+    }
+  }
+
+  .scroll-wraper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 3;
+    overflow-y: overlay;
+    overflow-x: hidden;
+  }
+
+  .scroll-inner {
+    position: relative;
+    top: -100%;
+  }
+
+  .layer {
+    &--1 {
+      position: relative;
+      z-index: 6;
+      .flower {
+        position: absolute;
+        object-fit: contain;
+
+        will-change: transform;
+        backface-visibility: hidden;
+
+        &--1 {
+          width: rem(925.07);
+          height: rem(1333);
+          top: rem(1038);
+          right: rem(-387);
+          transform: rotate(-27.75deg);
+          z-index: 10;
+        }
+
+        &--2 {
+          width: rem(1004.29);
+          height: rem(1447.91);
+          top: rem(992);
+          left: rem(-120);
+          transform: rotate(-8deg);
+          z-index: 9;
+        }
+
+        &--3 {
+          width: rem(927.53);
+          height: rem(1337.24);
+          top: rem(379);
+          right: rem(-330);
+          transform: rotate(19.63deg);
+          z-index: 8;
+        }
+
+        &--4 {
+          width: rem(980.55);
+          height: rem(1413.68);
+          top: rem(-150);
+          left: rem(-163);
+          transform: rotate(-12deg);
+          z-index: 7;
+        }
+
+        &--5 {
+          width: rem(782.48);
+          height: rem(1128.11);
+          top: rem(-50);
+          right: rem(-100);
+          transform: rotate(9deg);
+          z-index: 6;
+        }
+
+        &--6 {
+          width: rem(908.44);
+          height: rem(1309.71);
+          top: rem(304);
+          left: rem(-403);
+          z-index: 5;
+        }
+      }
+    }
+
+    &--2 {
+      position: relative;
+      z-index: 5;
+
+      .flower {
+        position: absolute;
+        object-fit: contain;
+
+        will-change: transform;
+        backface-visibility: hidden;
+
+        &--1 {
+          width: rem(742.59);
+          height: rem(758.56);
+          top: rem(1400);
+          right: rem(-140);
+          transform: rotate(-36.16deg);
+          z-index: 10;
+        }
+
+        &--2 {
+          width: rem(793.89);
+          height: rem(825.61);
+          top: rem(586);
+          left: rem(-372);
+          transform: rotate(19.63deg);
+          z-index: 9;
+        }
+
+        &--3 {
+          width: rem(725.04);
+          height: rem(633.28);
+          top: rem(466);
+          left: rem(158);
+          transform: rotate(23.25deg);
+          z-index: 8;
+        }
+
+        &--4 {
+          width: rem(684.02);
+          height: rem(627.92);
+          top: rem(922);
+          right: rem(-410);
+          transform: rotate(-27.75deg);
+          z-index: 7;
+        }
+
+        &--5 {
+          width: rem(578.58);
+          height: rem(591.02);
+          top: rem(434);
+          right: rem(-309);
+          transform: rotate(15deg);
+          z-index: 6;
+        }
+
+        &--6 {
+          width: rem(671.72);
+          height: rem(686.16);
+          top: rem(1304);
+          left: rem(-69);
+
+          z-index: 5;
+        }
+      }
+    }
+
+    &--3 {
+      position: relative;
+      z-index: 4;
+
+      .flower {
+        position: absolute;
+        object-fit: contain;
+
+        will-change: transform;
+        backface-visibility: hidden;
+
+        &--1 {
+          width: rem(466.23);
+          height: rem(427.99);
+          top: rem(864);
+          left: rem(-155);
+          transform: rotate(-29.04deg);
+          z-index: 11;
+        }
+
+        &--2 {
+          width: rem(360.43);
+          height: rem(330.87);
+          top: rem(636);
+          left: rem(406);
+          transform: rotate(10.81deg);
+          z-index: 10;
+        }
+
+        &--3 {
+          width: rem(362.73);
+          height: rem(377.23);
+          top: rem(1420);
+          left: rem(267);
+          transform: rotate(72.05deg);
+          z-index: 9;
+        }
+
+        &--4 {
+          width: rem(362.73);
+          height: rem(377.23);
+          top: rem(1272);
+          right: rem(11);
+          transform: rotate(-43.6deg);
+          z-index: 8;
+        }
+
+        &--5 {
+          width: rem(421.84);
+          height: rem(430.91);
+          top: rem(830);
+          right: rem(-189);
+          transform: rotate(14.9deg);
+          z-index: 7;
+        }
+
+        &--6 {
+          width: rem(272.37);
+          height: rem(278.23);
+          top: rem(879);
+          left: rem(302);
+          transform: rotate(14.9deg);
+          z-index: 6;
+        }
+
+        &--7 {
+          width: rem(266.31);
+          height: rem(276.95);
+          top: rem(865);
+          left: rem(591);
+          transform: rotate(-13.54deg);
+          z-index: 5;
+        }
+
+        &--8 {
+          width: rem(235.67);
+          height: rem(240.74);
+          top: rem(1100);
+          left: rem(639);
+          transform: rotate(-17.84deg);
+          z-index: 4;
+        }
+
+        &--9 {
+          width: rem(293.23);
+          height: rem(269.18);
+          top: rem(1289);
+          left: rem(471);
+          transform: rotate(10.81deg);
+          z-index: 10;
+        }
+
+        &--10 {
+          width: rem(298.36);
+          height: rem(310.28);
+          top: rem(1114);
+          left: rem(213);
+          z-index: 2;
+          @include for-desktop {
+            transform: rotate(10deg);
+          }
+        }
+
+        &--11 {
+          width: rem(128.01);
+          height: rem(131.86);
+          top: rem(1133);
+          left: rem(534);
+
+          z-index: 11;
+        }
+      }
+    }
+
+    &--4 {
+      position: relative;
+      z-index: 3;
+
+      .flower {
+        position: absolute;
+        object-fit: contain;
+
+        will-change: transform;
+        backface-visibility: hidden;
+
+        &--1 {
+          width: rem(149.67);
+          height: rem(137.4);
+          top: rem(1018.5);
+          left: rem(416.6);
+          transform: rotate(-27.75deg);
+          z-index: 11;
+        }
+
+        &--2 {
+          width: rem(185.53);
+          height: rem(162.05);
+          top: rem(1039);
+          left: rem(612);
+          transform: rotate(25.4deg);
+          z-index: 10;
+        }
+
+        &--3 {
+          width: rem(146.55);
+          height: rem(149.7);
+          top: rem(1252);
+          left: rem(639);
+
+          z-index: 9;
+        }
+
+        &--4 {
+          width: rem(127.8);
+          height: rem(117.32);
+          top: rem(1167);
+          left: rem(427);
+          transform: rotate(-27.75deg);
+          z-index: 8;
+        }
+
+        &--5 {
+          width: rem(149.84);
+          height: rem(130.87);
+          top: rem(1338);
+          left: rem(500);
+
+          z-index: 7;
+        }
+
+        &--6 {
+          width: rem(98.32);
+          height: rem(101.29);
+          top: rem(1253);
+          left: rem(482);
+          transform: rotate(-17.7deg);
+          z-index: 6;
+        }
+
+        &--7 {
+          width: rem(118.69);
+          height: rem(121.24);
+          top: rem(1087);
+          left: rem(527);
+
+          z-index: 5;
+        }
+
+        &--8 {
+          width: rem(86.79);
+          height: rem(90.26);
+          top: rem(1258);
+          left: rem(586);
+
+          z-index: 4;
+        }
+
+        &--9 {
+          width: rem(96.68);
+          height: rem(88.75);
+          top: rem(1169);
+          left: rem(635);
+          transform: rotate(7.09deg);
+          z-index: 3;
+        }
+
+        &--10 {
+          width: rem(37.33);
+          height: rem(38.61);
+          top: rem(1219);
+          left: rem(575);
+
+          z-index: 2;
+        }
+      }
+    }
+  }
+  .trigger-box {
+    width: 100%;
+    height: rem(4000);
+    pointer-events: none;
+
+    @include for-desktop {
+      height: rem(3000);
+    }
   }
 }

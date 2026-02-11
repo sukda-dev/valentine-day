@@ -139,9 +139,10 @@ export function jsLibrary() {
     "js/libs/jquery.ui.touch-punch.min.js",
     "js/libs/jquery.mousewheel.min.js",
     "js/libs/gsap.min.js",
-    "js/libs/scrollTrigger.js",
-    "js/libs/selectcustomizer.min.js",
-    "js/libs/swiper.min.js",
+    "js/libs/tweenmax.min.js",
+    "js/libs/scroll-magic.min.js",
+    "js/libs/animation.gsap.min.js",
+    "js/libs/debug.addIndicators.min.js",
   ].filter((f) => fs.existsSync(f));
 
   if (!files.length) {

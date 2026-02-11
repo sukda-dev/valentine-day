@@ -11,21 +11,18 @@
             preserveAspectRatio="xMidYMid slice"
           >
             <defs>
-              <!-- ===== Glow Gradient ===== -->
               <radialGradient id="lanternGlow">
                 <stop offset="0%" stop-color="#fffbe6" />
                 <stop offset="40%" stop-color="#ffe08a" />
                 <stop offset="100%" stop-color="transparent" />
               </radialGradient>
 
-              <!-- ===== Paper Gradient ===== -->
               <linearGradient id="lanternPaper" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="0%" stop-color="#fff7d6" />
                 <stop offset="100%" stop-color="#f2a654" />
               </linearGradient>
 
               <symbol id="lanternSymbol" viewBox="-24 -48 48 96">
-                <!-- glow -->
                 <ellipse
                   cx="0"
                   cy="-6"
@@ -35,7 +32,6 @@
                   class="glow"
                 />
 
-                <!-- body -->
                 <rect
                   x="-16"
                   y="-36"
@@ -48,7 +44,6 @@
               </symbol>
             </defs>
 
-            <!-- ================= DUST ================= -->
             <g class="dust">
               <circle cx="300" cy="300" r="2" />
               <circle cx="800" cy="250" r="2" />
@@ -58,10 +53,8 @@
               <circle cx="500" cy="180" r="2" />
             </g>
 
-            <!-- WATER / BOAT (60–100%) -->
             <g class="water-anchor">
               <g class="festival-water" transform="translate(0 380)">
-                <!-- boat, reflection, ripples -->
                 <g class="water-scale" transform="scale(1.5 0.8)">
                   <path
                     d="M0 309L21.5 302C43 295 86 281 128.8 279.5C171.7 278 214.3 289 257.2 298.2C300 307.3 343 314.7 385.8 313C428.7 311.3 471.3 300.7 514.2 293.3C557 286 600 282 642.8 289.3C685.7 296.7 728.3 315.3 771.2 316C814 316.7 857 299.3 878.5 290.7L900 282L900 451L878.5 451C857 451 814 451 771.2 451C728.3 451 685.7 451 642.8 451C600 451 557 451 514.2 451C471.3 451 428.7 451 385.8 451C343 451 300 451 257.2 451C214.3 451 171.7 451 128.8 451C86 451 43 451 21.5 451L0 451Z"
@@ -91,7 +84,6 @@
                 </g>
               </g>
 
-              <!-- ================= BOAT ================= -->
               <g class="boat" transform="translate(540 570)">
                 <g class="boat-float" transform="scale(0.8)">
                   <path
@@ -112,9 +104,7 @@
               </g>
             </g>
 
-            <!-- SKY (0–60%) -->
             <g class="lantern-sky scroll-layer">
-              <!-- ================= FAR LAYER ================= -->
               <g class="lantern-layer far idle-layer" opacity="0.35">
                 <g transform="translate(200 150) scale(0.08)">
                   <use href="#lanternSymbol" />
@@ -133,7 +123,6 @@
                 </g>
               </g>
 
-              <!-- ================= MID LAYER ================= -->
               <g class="lantern-layer mid idle-layer" opacity="0.7">
                 <g transform="translate(400 550) scale(0.11)">
                   <use href="#lanternSymbol" />
@@ -148,7 +137,6 @@
                 </g>
               </g>
 
-              <!-- ================= NEAR LAYER ================= -->
               <g class="lantern-layer near idle-layer">
                 <g transform="translate(500 550) scale(0.15)">
                   <use href="#lanternSymbol" />
@@ -164,7 +152,6 @@
               </g>
             </g>
 
-            <!-- ================= HEART PARTICLES ================= -->
             <g class="hearts"></g>
           </svg>
         </div>
@@ -175,4 +162,189 @@
       สุขสันต์วันวาเลนไทน์ครับ 💖
     </div>
   </section>
+  <div class="scroll-wraper">
+    <div id="scroll-box"></div>
+  </div>
+  <div class="scroll-inner">
+    <div class="content-inner">
+      <div class="trigger-box">
+        <div class="layer layer--1">
+          <img
+            src="images/general/lantern.svg"
+            class="flower flower--1"
+            alt=""
+          />
+          <img
+            src="images/general/lantern.svg"
+            class="flower flower--2"
+            alt=""
+          />
+          <img
+            src="images/general/lantern.svg"
+            class="flower flower--3"
+            alt=""
+          />
+          <img
+            src="images/general/lantern.svg"
+            class="flower flower--4"
+            alt=""
+          />
+          <img
+            src="images/general/lantern.svg"
+            class="flower flower--5"
+            alt=""
+          />
+          <img
+            src="images/general/lantern.svg"
+            class="flower flower--6"
+            alt=""
+          />
+        </div>
+
+        <div class="layer layer--2">
+          <img
+            src="images/general/lantern.svg"
+            class="flower flower--1"
+            alt=""
+          />
+          <img
+            src="images/general/lantern.svg"
+            class="flower flower--2"
+            alt=""
+          />
+          <img
+            src="images/general/lantern.svg"
+            class="flower flower--3"
+            alt=""
+          />
+          <img
+            src="images/general/lantern.svg"
+            class="flower flower--4"
+            alt=""
+          />
+          <img
+            src="images/general/lantern.svg"
+            class="flower flower--5"
+            alt=""
+          />
+          <img
+            src="images/general/lantern.svg"
+            class="flower flower--6"
+            alt=""
+          />
+        </div>
+
+        <div class="layer layer--3">
+          <img
+            src="images/general/lantern.svg"
+            class="flower flower--1"
+            alt=""
+          />
+          <img
+            src="images/general/lantern.svg"
+            class="flower flower--2"
+            alt=""
+          />
+          <img
+            src="images/general/lantern.svg"
+            class="flower flower--3"
+            alt=""
+          />
+          <img
+            src="images/general/lantern.svg"
+            class="flower flower--4"
+            alt=""
+          />
+          <img
+            src="images/general/lantern.svg"
+            class="flower flower--5"
+            alt=""
+          />
+          <img
+            src="images/general/lantern.svg"
+            class="flower flower--6"
+            alt=""
+          />
+          <img
+            src="images/general/lantern.svg"
+            class="flower flower--7"
+            alt=""
+          />
+          <img
+            src="images/general/lantern.svg"
+            class="flower flower--8"
+            alt=""
+          />
+          <img
+            src="images/general/lantern.svg"
+            class="flower flower--9"
+            alt=""
+          />
+          <img
+            src="images/general/lantern.svg"
+            class="flower flower--10"
+            alt=""
+          />
+          <img
+            src="images/general/lantern.svg"
+            class="flower flower--11"
+            alt=""
+          />
+        </div>
+
+        <div class="layer layer--4">
+          <img
+            src="images/general/lantern.svg"
+            class="flower flower--1"
+            alt=""
+          />
+          <img
+            src="images/general/lantern.svg"
+            class="flower flower--2"
+            alt=""
+          />
+          <img
+            src="images/general/lantern.svg"
+            class="flower flower--3"
+            alt=""
+          />
+          <img
+            src="images/general/lantern.svg"
+            class="flower flower--4"
+            alt=""
+          />
+          <img
+            src="images/general/lantern.svg"
+            class="flower flower--5"
+            alt=""
+          />
+          <img
+            src="images/general/lantern.svg"
+            class="flower flower--6"
+            alt=""
+          />
+          <img
+            src="images/general/lantern.svg"
+            class="flower flower--7"
+            alt=""
+          />
+          <img
+            src="images/general/lantern.svg"
+            class="flower flower--8"
+            alt=""
+          />
+          <img
+            src="images/general/lantern.svg"
+            class="flower flower--9"
+            alt=""
+          />
+          <img
+            src="images/general/lantern.svg"
+            class="flower flower--10"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

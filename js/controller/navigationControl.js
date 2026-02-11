@@ -95,9 +95,6 @@ function loadPage(pagePath, script, json, callback) {
         var getName = $(".page").data("menu");
         $(".nav__page").hide();
         $(".nav__page.name" + getName).fadeIn();
-
-        // HANDLE SCROOL DOWN
-        handleScrollDown();
       },
     );
   }
@@ -157,9 +154,9 @@ function handleScrollDown() {
       });
     });
 
-    arrowDown.off("click");
-    arrowDown.one("click", function () {
-      autoScrollToBottom();
-    });
+    // arrowDown.off("click");
+    // arrowDown.one("click", function () {
+    //   autoScrollToBottom();
+    // });
   }
 }

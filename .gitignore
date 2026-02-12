@@ -1,0 +1,36 @@
+# ignore folder
+node_modules
+design
+build
+.dist
+dist
+
+# ignore file
+*scripts.js
+*script.js
+*templates.js
+*template.js
+*library.js
+*style.css
+*style.css.map
+yarn.lock
+package-lock.json
+pnpm-lock.yaml
+.DS_Store
+*global.css
+*main.css
+*main.css.map
+.env
+*.DS_Store
+
+# sound
+video
+videos
+sound
+sounds
+pdf
+gif
+gifs
+
+# Log files
+*.log

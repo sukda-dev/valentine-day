@@ -14,7 +14,6 @@ var moduleStart = {
   },
 
   // SET LANGUAGE
-  // TODO: check default language of project
   setLang: function () {
     if (!GetURLParameter("_lang")) {
       window.location = "?_lang=en-gb";
@@ -28,7 +27,7 @@ var moduleStart = {
 
   // DO THE RESPONSIVE FOR PROJECT WITH .PSD AND .XD
   calculateScreen: function () {
-    responsive();
+    responsive.init();
   },
 
   // CALL THE FIRST PAGE

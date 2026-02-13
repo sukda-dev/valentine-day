@@ -58,6 +58,7 @@
     @include for-mobile {
       width: rem(100);
       height: rem(100);
+      rotate: 180deg;
     }
   }
 

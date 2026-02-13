@@ -544,4 +544,17 @@ body {
       height: rem(3000);
     }
   }
+
+  .overlay {
+    @include absolute-center;
+    @include fill-area;
+    background-color: rgba($black, 0.5);
+    z-index: 100;
+
+    .text-click {
+      position: relative;
+      color: $white;
+      top: 58%;
+    }
+  }
 }

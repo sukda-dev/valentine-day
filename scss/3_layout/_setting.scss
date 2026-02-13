@@ -2,6 +2,7 @@
 
 * {
   box-sizing: border-box;
+  touch-action: manipulation;
 }
 
 html,
@@ -9,6 +10,7 @@ body {
   width: 100%;
   height: 100%;
   overflow: hidden;
+  background-color: $white;
 }
 
 html {
@@ -24,16 +26,17 @@ html {
   user-select: none;
 }
 
-// TODO: check base font size
 body {
   @include user-select-none;
+  @include flex-center;
   margin: 0;
   padding: 0;
-  font-family: $text-font;
+
+  font-family: $text-font, "Century Gothic";
   color: $text-color;
-  font-size: rem(32);
-  font-weight: normal;
+  font-weight: 400;
   text-align: center;
+  font-size: rem(40);
 }
 
 img {
@@ -50,22 +53,6 @@ img {
   justify-content: space-between;
   overflow: hidden;
   position: relative;
-}
-
-.m-style {
-  display: none;
-
-  @include for-mobile {
-    display: block;
-  }
-}
-
-.d-style {
-  display: block;
-
-  @include for-mobile {
-    display: none;
-  }
 }
 
 a:link,
@@ -85,4 +72,25 @@ p {
   margin-block-end: unset;
   margin-inline-start: unset;
   margin-inline-end: unset;
+  font-weight: 400;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+
+  &--contain {
+    object-fit: contain;
+  }
+
+  &--cover {
+    object-fit: cover;
+  }
+
+  &--absolute {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
 }

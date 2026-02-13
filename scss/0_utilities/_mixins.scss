@@ -16,7 +16,8 @@
   second ways: downgrading dart-sass to 1.64.2 or less than ("sass": "1.64.2")
  */
 @function rem($rem) {
-  @return calc($rem / 16) + rem;
+  $rem: calc((320 * ($rem / 10)) / 1080);
+  @return #{$rem}rem;
 }
 
 /*  ==================================================
@@ -160,4 +161,3 @@
     @content;
   }
 }
-

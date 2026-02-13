@@ -1,5 +1,6 @@
 const pageId = "#tangled";
 let heartLoop;
+let sound;
 const VIEWBOX_DESKTOP = "0 0 1440 900";
 const VIEWBOX_MOBILE = "360 0 720 900";
 var tl;
@@ -7,9 +8,7 @@ var tl;
 $(function () {
   setupScene();
   playIdleAnimations();
-
-  arrowDown.downPulse();
-
+  overlayHandle();
   window.addEventListener("resize", () => {
     updateViewBox();
   });
@@ -397,10 +396,10 @@ function scrollLantern() {
   };
 
   tl.to(
-    arrowDown,
+    $(`.overlay`),
     {
-      alpha: 0,
-      duration: 1,
+      alpha: 1,
+      delay: "block",
       ease: "power2.out",
     },
     0,
@@ -788,10 +787,51 @@ function scrollLantern() {
     ">-0.2",
   );
 
-  new ScrollMagic.Scene({
+  const scene = new ScrollMagic.Scene({
     triggerHook: 0,
     duration: isMobile ? 5000 : 20000,
   })
     .setTween(tl)
     .addTo(controller);
+
+  scene.on("update", function (event) {
+    if (event.scrollPos > 1) {
+      if (!sound || sound.paused) {
+        soundHandel();
+      }
+    } else {
+      if (sound && !sound.paused) {
+        sound.pause();
+        sound.currentTime = 0;
+      }
+    }
+  });
+}
+
+const soundHandel = () => {
+  if (!sound) {
+    sound = new Audio();
+    sound.src = `sounds/i-see-the-light.mp3`;
+  }
+
+  if (!sound.paused) {
+    sound.pause();
+    sound.currentTime = 0;
+  }
+
+  var playPromise = sound.play();
+
+  if (playPromise !== undefined) {
+    playPromise.catch((error) => {});
+  }
+};
+
+function overlayHandle() {
+  const overlayElem = $(`.overlay`);
+
+  overlayElem.find("#arrow-down").downPulse();
+
+  overlayElem.on(`click`, function () {
+    overlayElem.fadeOut();
+  });
 }
